@@ -8,7 +8,7 @@ loader_blueprint = Blueprint("loader_blueprint", __name__, template_folder='temp
 
 @loader_blueprint.route('/post')
 def post_page():
-    return render_template('post_form.html')
+    return render_template("post_form.html")
 
 
 @loader_blueprint.route('/post', methods=['POST'])
