@@ -1,3 +1,5 @@
+import logging
+
 from flask import Flask, send_from_directory
 # from functions import ...
 from hw_12_.loader.views import loader_blueprint
@@ -12,20 +14,7 @@ app = Flask(__name__)
 app.register_blueprint(main_blueprint)
 app.register_blueprint(loader_blueprint)
 
-
-@app.route("/list")
-def page_tag():
-    pass
-
-
-@app.route("/post", methods=["GET", "POST"])
-def page_post_form():
-    pass
-
-
-@app.route("/post", methods=["POST"])
-def page_post_upload():
-    pass
+logging.basicConfig(filename="basic.log", level=logging.INFO)
 
 
 @app.route("/uploads/<path:path>")
